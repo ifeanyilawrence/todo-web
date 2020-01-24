@@ -1,0 +1,42 @@
+<div class="example-container card">
+  <div style="margin: 20px;" class="button-row">
+    <h4>Todo List</h4>
+  </div>
+  <div class="card-body">
+    <a color="primary" [routerLink]="['/add-todo']">
+      <h6>Add</h6>
+    </a>
+  <div class="float-right" *ngIf="isLoadingResults">
+    <span>Loading...</span>
+  </div>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of data" >
+                    <td>{{item.description}}</td>
+                    <td>
+                        <span *ngIf="item.completed; else inComplete">
+                        Completed
+                        </span>
+
+                        <ng-template #inComplete>
+                        Pending
+                        </ng-template>
+                    </td>
+                    <td>
+                        <button class="btn btn-sm btn btn-primary" [routerLink]="['/todo-details/', item._id]">Detail</button> &nbsp;
+                        <button class="btn btn-sm btn btn-danger" [routerLink]="['/delete-todo/', item._id]">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+  </div>
+</div>
