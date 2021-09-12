@@ -9,7 +9,7 @@ const loggedUser = localStorage.getItem('currentUser');
 console.log(loggedUser);
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json', "Authorization": `Bearer `})
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 
 @Injectable({ providedIn: 'root' })

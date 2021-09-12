@@ -9,8 +9,7 @@ import { environment } from '../../environments/environment';
 const loggedUser = localStorage.getItem('currentUser');
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-Type': 'application/json', "Authorization": `Bearer `})
-  // headers: new HttpHeaders({'Content-Type': 'application/json', "Authorization": `Bearer ${loggedUser['token']}`})
+  headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 const apiUrl = `${environment.apiUrl}/tasks`;
 //const apiUrl = "http://localhost:3000/tasks";
